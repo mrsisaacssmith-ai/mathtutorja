@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Result — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="">
+
+<header class="site-header" id="siteHeader"></header>
+
+<main>
+  <section>
+    <div class="wrap" style="max-width:560px;">
+      <div class="card" id="resultCard" style="text-align:center; padding:44px 32px;">
+        <p style="color:var(--slate);">Checking your payment…</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const status = params.get('status');
+const reason = params.get('reason');
+const card = document.getElementById('resultCard');
+
+if (status === 'success') {
+  card.innerHTML = `
+    <div class="icon-badge" style="margin:0 auto 16px; background:rgba(30,86,49,0.12); color:var(--forest); font-size:1.4rem;">✓</div>
+    <h2 style="margin-bottom:10px;">You're all set!</h2>
+    <p style="color:var(--slate); margin-bottom:24px;">Payment received — your weekly slot is reserved. We'll email your Zoom link before your first online session, or see you Saturday at 134 Constant Spring Road.</p>
+    <a href="portal.html" class="btn btn-primary">Go to my portal</a>`;
+} else if (status === 'failed') {
+  card.innerHTML = `
+    <div class="icon-badge" style="margin:0 auto 16px; background:rgba(200,60,60,0.12); color:#b13a3a; font-size:1.4rem;">!</div>
+    <h2 style="margin-bottom:10px;">Payment didn't go through</h2>
+    <p style="color:var(--slate); margin-bottom:24px;">${reason ? decodeURIComponent(reason) : 'Your card was declined or the payment was cancelled.'} Your slot was not reserved — no charge was made.</p>
+    <a href="schedule.html" class="btn btn-primary">Try again</a>`;
+} else {
+  card.innerHTML = `
+    <div class="icon-badge" style="margin:0 auto 16px; background:rgba(214,164,25,0.18); color:#8a6a10; font-size:1.4rem;">?</div>
+    <h2 style="margin-bottom:10px;">Something went wrong</h2>
+    <p style="color:var(--slate); margin-bottom:24px;">We couldn't confirm this payment. If you were charged, contact us and we'll sort it out right away.</p>
+    <a href="contact.html" class="btn btn-primary">Contact us</a>`;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="login">
+
+<header class="site-header" id="siteHeader"></header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="form-shell">
+        <span class="eyebrow">Student login</span>
+        <h1 style="font-size:1.6rem; margin:10px 0 6px;">Welcome back</h1>
+        <p style="color:var(--slate); font-size:0.9rem; margin-bottom:26px;">Log in to view your class schedule and materials.</p>
+
+        <form id="loginForm">
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@email.com" required>
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" required>
+          </div>
+          <p id="loginError" style="color:#b13a3a; font-size:0.88rem; margin-bottom:14px; display:none;"></p>
+          <button class="btn btn-primary btn-block" type="submit" id="loginSubmit">Log in</button>
+        </form>
+
+        <p class="form-foot">New here? <a href="signup.html">Register for a class</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('loginSubmit');
+  const errorBox = document.getElementById('loginError');
+  errorBox.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Logging in…';
+  try {
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value;
+    const { token, user } = await apiFetch('/auth/login', { method: 'POST', body: { email, password } });
+    Auth.setSession(token, user);
+    window.location.href = user.role === 'admin' ? 'admin.html' : 'portal.html';
+  } catch (err) {
+    errorBox.textContent = err.message;
+    errorBox.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Log in';
+  }
+});
+</script>
+</body>
+</html>

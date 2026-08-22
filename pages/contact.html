@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="contact">
+
+<header class="site-header" id="siteHeader"></header>
+
+<main>
+  <section>
+    <div class="wrap" style="display:grid; grid-template-columns: 1fr 1fr; gap:40px; align-items:start;">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1 style="font-size:clamp(1.9rem,3.4vw,2.4rem); margin:10px 0 16px;">Questions before you register?</h1>
+        <p style="color:var(--slate); margin-bottom:30px;">Reach out and we'll get back to you, usually within a day.</p>
+
+        <div class="card" style="margin-bottom:16px;">
+          <h3 style="margin-bottom:6px;">Face-to-face location</h3>
+          <p style="color:var(--slate);">134 Constant Spring Road, Kingston, Jamaica</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:6px;">Saturday hours</h3>
+          <p style="color:var(--slate);">9:00am – 5:00pm</p>
+        </div>
+      </div>
+
+      <form class="form-shell" style="max-width:100%;" data-demo>
+        <div class="field"><label for="cname">Name</label><input id="cname" type="text" required></div>
+        <div class="field"><label for="cemail">Email</label><input id="cemail" type="email" required></div>
+        <div class="field"><label for="cmsg">Message</label><textarea id="cmsg" rows="5" required></textarea></div>
+        <button class="btn btn-primary btn-block" type="submit">Send message</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

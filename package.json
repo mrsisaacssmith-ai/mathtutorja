@@ -1,0 +1,17 @@
+{
+  "name": "mathtutorja",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Math Tutor JA — static frontend + Netlify Functions backend (Netlify DB + PayPal + bank transfer).",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@netlify/neon": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}

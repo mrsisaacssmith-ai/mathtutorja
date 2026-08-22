@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="policy">
+
+<header class="site-header" id="siteHeader"></header>
+
+<main>
+  <section style="padding-bottom:0;">
+    <div class="wrap">
+      <span class="eyebrow">Class policy</span>
+      <h1 style="font-size:clamp(1.9rem,3.4vw,2.6rem); margin:10px 0 12px;">Cancellation &amp; lateness policy</h1>
+      <p style="color:var(--slate); max-width:60ch;">Please read this before registering. Parents and students confirm agreement at sign-up.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="max-width:760px;">
+      <div class="card" style="margin-bottom:20px;">
+        <div class="icon-badge">24h</div>
+        <h3>Cancellation notice</h3>
+        <p>Classes must be cancelled or rescheduled at least 24 hours before the session start time. Cancellations made after this window, or missed sessions without notice, are counted as the week's class and are not refunded or made up.</p>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div class="icon-badge">⏱</div>
+        <h3>Lateness</h3>
+        <p>Sessions run for their full scheduled length regardless of what time the student joins. If a student arrives late — online or face to face — the session still ends at the scheduled time, and no extra time is added.</p>
+      </div>
+      <div class="card" style="margin-bottom:20px;">
+        <div class="icon-badge">📅</div>
+        <h3>Monthly payment</h3>
+        <p>Payment is due at the start of each month to keep a weekly slot reserved. If payment is not received, the slot may be released to another student.</p>
+      </div>
+
+      <hr class="divider">
+
+      <div class="form-shell" style="max-width:100%;">
+        <h3 style="margin-bottom:6px;">Parent / student agreement</h3>
+        <p style="color:var(--slate); font-size:0.88rem; margin-bottom:22px;">This confirmation is also included at the end of registration.</p>
+        <div class="field-check" style="margin-bottom:16px;">
+          <input type="checkbox" id="policyCheck">
+          <label for="policyCheck">I have read and agree to the 24-hour cancellation policy and the lateness policy above.</label>
+        </div>
+        <div class="field">
+          <label for="policySig">Typed signature (parent or student, if 18+)</label>
+          <input type="text" id="policySig" placeholder="Full name">
+        </div>
+        <div class="field">
+          <label for="policyDate">Date</label>
+          <input type="date" id="policyDate">
+        </div>
+        <button class="btn btn-primary btn-block" type="button" onclick="alert('This is a front-end scaffold — no data is submitted yet.')">Confirm agreement</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

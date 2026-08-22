@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="admin">
+
+<div class="dash-shell">
+  <aside class="dash-side">
+    <a href="../index.html" class="logo">
+      <svg class="logo-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" stroke="#D6A419" stroke-width="2"/>
+        <path d="M13 28L20 10L27 28" stroke="#FAF9F6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16.5 21H23.5" stroke="#F0C24A" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <span>Math Tutor <span class="logo-ja" style="color:#F0C24A;">JA</span></span>
+    </a>
+    <ul class="dash-nav">
+      <li><a href="#" class="active">📊 Overview</a></li>
+      <li><a href="#">🗓 Bookings</a></li>
+      <li><a href="#">💳 Payments</a></li>
+      <li><a href="#">📚 Materials</a></li>
+      <li><a href="#">👥 Students</a></li>
+      <li><a href="../index.html">← Back to site</a></li>
+    </ul>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-top">
+      <div>
+        <span class="eyebrow">Admin</span>
+        <h1 style="font-size:1.5rem; margin-top:6px;">Overview</h1>
+      </div>
+    </div>
+
+    <div class="stat-row" id="statRow">
+      <div class="stat-card"><div class="num">—</div><div class="label">Active students</div></div>
+      <div class="stat-card"><div class="num">—</div><div class="label">Revenue this month</div></div>
+      <div class="stat-card"><div class="num">—</div><div class="label">Open slots remaining</div></div>
+      <div class="stat-card"><div class="num">—</div><div class="label">Payments needing attention</div></div>
+    </div>
+
+    <div class="pill-nav" data-tabs="admin">
+      <button class="active" data-tab="bookings">Bookings</button>
+      <button data-tab="payments">Payments</button>
+    </div>
+
+    <div data-panel-group="admin" data-panel="bookings">
+      <table>
+        <thead>
+          <tr><th>Student</th><th>Grade</th><th>Slot</th><th>Type</th><th>Zoom link</th><th>Status</th></tr>
+        </thead>
+        <tbody id="bookingsBody">
+          <tr><td colspan="6" style="color:var(--slate);">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div data-panel-group="admin" data-panel="payments" style="display:none;">
+      <table>
+        <thead>
+          <tr><th>Student</th><th>Slot</th><th>Month</th><th>Amount (USD)</th><th>Method</th><th>Status</th></tr>
+        </thead>
+        <tbody id="paymentsBody">
+          <tr><td colspan="6" style="color:var(--slate);">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

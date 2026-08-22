@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="signup">
+
+<header class="site-header" id="siteHeader"></header>
+
+<main>
+  <section style="padding-bottom:0;">
+    <div class="wrap">
+      <span class="eyebrow">Registration</span>
+      <h1 style="font-size:clamp(1.9rem,3.4vw,2.4rem); margin:10px 0 12px;">Register for a class</h1>
+      <p style="color:var(--slate); max-width:60ch;">Three quick steps: confirm your slot, tell us about your student, and pay to reserve your weekly time.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="display:grid; grid-template-columns: 1.3fr 1fr; gap:36px; align-items:start;">
+      <form class="form-shell" style="max-width:100%;" id="signupForm">
+        <h3 style="margin-bottom:14px;">1. Your class slot</h3>
+        <div id="slotSummary" class="card" style="margin-bottom:26px; box-shadow:none; border-style:dashed;">
+          <p style="color:var(--slate); font-size:0.92rem;">No slot selected yet.</p>
+          <a href="schedule.html" class="btn btn-outline-navy btn-sm" style="margin-top:12px;">Choose a class time</a>
+        </div>
+
+        <hr class="divider" style="margin:0 0 26px;">
+
+        <h3 style="margin-bottom:18px;">2. Student &amp; parent details</h3>
+        <div class="grid-2" style="gap:16px;">
+          <div class="field"><label for="sname">Student full name</label><input id="sname" type="text" required></div>
+          <div class="field"><label for="sgrade">Grade level</label>
+            <select id="sgrade" required>
+              <option value="">Select grade</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+              <option>Grade 10 (CSEC)</option><option>Grade 11 (CSEC)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid-2" style="gap:16px;">
+          <div class="field"><label for="pname">Parent/guardian name</label><input id="pname" type="text" required></div>
+          <div class="field"><label for="pphone">Phone number</label><input id="pphone" type="tel" required></div>
+        </div>
+        <div class="field"><label for="pemail">Email</label><input id="pemail" type="email" required></div>
+        <div class="field"><label for="ppass">Create a password</label><input id="ppass" type="password" minlength="8" placeholder="At least 8 characters" required></div>
+
+        <hr class="divider">
+
+        <h3 style="margin-bottom:12px;">3. Policy agreement</h3>
+        <div class="field-check" style="margin-bottom:14px;">
+          <input type="checkbox" id="waiverCheck">
+          <label for="waiverCheck">I have read and agree to the <a href="policy.html" style="color:var(--forest); font-weight:600;">24-hour cancellation and lateness policy</a>. I understand late arrivals do not receive extra time.</label>
+        </div>
+        <div class="field">
+          <label for="waiverSig">Typed signature (parent or student, if 18+)</label>
+          <input id="waiverSig" type="text" placeholder="Full name" required>
+        </div>
+
+        <hr class="divider">
+
+        <h3 style="margin-bottom:12px;">4. Payment method</h3>
+        <div class="grid-2" style="gap:12px; margin-bottom:8px;">
+          <label class="card" style="display:flex; align-items:center; gap:10px; cursor:pointer; padding:16px;">
+            <input type="radio" name="paymentMethod" value="paypal" checked style="width:auto;">
+            <span>Pay with PayPal <span style="display:block; color:var(--slate); font-size:0.8rem;">Card or PayPal balance, in USD</span></span>
+          </label>
+          <label class="card" style="display:flex; align-items:center; gap:10px; cursor:pointer; padding:16px;">
+            <input type="radio" name="paymentMethod" value="bank_transfer" style="width:auto;">
+            <span>Bank transfer <span style="display:block; color:var(--slate); font-size:0.8rem;">NCB, confirmed manually</span></span>
+          </label>
+        </div>
+
+        <p id="formError" style="color:#b13a3a; font-size:0.88rem; margin:10px 0; display:none;"></p>
+
+        <button class="btn btn-gold btn-block" id="signupSubmit" type="submit" disabled>Continue</button>
+      </form>
+
+      <aside class="card" id="orderSummary">
+        <p class="eyebrow">Order summary</p>
+        <h3 style="margin:10px 0 4px;">Monthly registration</h3>
+        <p style="color:var(--slate); font-size:0.9rem; margin-bottom:20px;">Billed monthly, in USD. Your weekly slot is reserved once payment is confirmed.</p>
+        <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--board-grey); font-size:0.92rem;">
+          <span>One-on-one, per session</span><strong style="font-family:var(--font-mono);" id="priceOneOnOne">—</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px solid var(--board-grey); font-size:0.92rem;">
+          <span>CSEC group, per session</span><strong style="font-family:var(--font-mono);" id="priceGroup">—</strong>
+        </div>
+        <p style="color:var(--slate); font-size:0.8rem; margin-top:14px;">PayPal charges in USD (JMD isn't a supported PayPal currency). Bank transfer is billed at the JMD price shown on the schedule page.</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/signup.js"></script>
+</body>
+</html>

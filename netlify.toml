@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  command = "echo 'no build step — static frontend'"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Frontend is plain static HTML/CSS/JS at the repo root, so no build step is
+# required. Function routes are defined in each function file via its own
+# `export const config = { path: '/api/...' }` (Netlify Functions v2).

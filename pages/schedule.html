@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Class Schedule — Math Tutor JA</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-root="../" data-page="schedule">
+
+<header class="site-header" id="siteHeader"></header>
+
+<main>
+  <section style="padding-bottom:0;">
+    <div class="wrap">
+      <span class="eyebrow">Class schedule</span>
+      <h1 style="font-size:clamp(1.9rem,3.4vw,2.6rem); margin:10px 0 12px;">Pick your weekly slot</h1>
+      <p style="color:var(--slate); max-width:60ch;">Tap a time below to see pricing and continue to registration. Your slot is only reserved once payment is complete.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" style="display:grid; grid-template-columns: 1fr 340px; gap:36px; align-items:start;">
+      <div>
+        <!-- WEEKDAY ONLINE -->
+        <h2 style="font-size:1.3rem; margin-bottom:6px;">Online · Monday–Friday</h2>
+        <p style="color:var(--slate); font-size:0.9rem; margin-bottom:18px;">One-on-one Mathematics coaching, via Zoom.</p>
+        <div class="timetable" id="weekdaySlots">
+          <p style="color:var(--slate); font-size:0.9rem;">Loading class times…</p>
+        </div>
+
+        <hr class="divider">
+
+        <!-- SATURDAY FACE TO FACE -->
+        <h2 style="font-size:1.3rem; margin-bottom:6px;">Face to face · Saturday</h2>
+        <p style="color:var(--slate); font-size:0.9rem; margin-bottom:18px;">134 Constant Spring Road, Kingston.</p>
+        <div class="sat-grid" id="saturdaySlots">
+          <p style="color:var(--slate); font-size:0.9rem;">Loading class times…</p>
+        </div>
+      </div>
+
+      <!-- SUMMARY SIDEBAR -->
+      <aside class="card" id="bookingSummary" style="position:sticky; top:100px;">
+        <p class="eyebrow">Your selection</p>
+        <h3 style="margin:10px 0 6px;">No slot selected yet</h3>
+        <p style="color:var(--slate); font-size:0.9rem;">Choose a time on the left to see pricing and continue.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="bg-board">
+    <div class="wrap" style="display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="flex:1; min-width:240px;">
+        <h3 style="margin-bottom:8px;">Good to know</h3>
+        <p style="color:var(--slate); font-size:0.92rem;">Registering reserves that weekly time slot for you until the school term ends. Payment is due monthly to keep your slot. Cancellations need 24 hours' notice — see our <a href="policy.html" style="color:var(--forest); font-weight:600;">policy page</a>.</p>
+      </div>
+      <a href="signup.html" class="btn btn-primary">Register for a slot</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="siteFooter"></footer>
+
+<script src="../js/api.js"></script>
+<script src="../js/components.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/schedule.js"></script>
+</body>
+</html>
