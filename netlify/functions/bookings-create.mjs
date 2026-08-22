@@ -4,8 +4,8 @@ import { requireAuth } from './_shared/auth.mjs';
 import { createOrder } from './_shared/paypal.mjs';
 import { getBankDetails } from './_shared/bank.mjs';
 
-const TERM_START = process.env.TERM_START || '2027-01-14';
-const TERM_END = process.env.TERM_END || '2027-07-03';
+const TERM_START = process.env.TERM_START;
+const TERM_END = process.env.TERM_END;
 
 export default withErrorHandling(async (req) => {
   if (req.method !== 'POST') throw new HttpError(405, 'Method not allowed.');
