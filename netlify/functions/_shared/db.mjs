@@ -81,8 +81,8 @@ export async function ensureSchema() {
 
   // Seed the fixed weekly schedule. USD prices come from env so you control
   // the exact conversion — PayPal does not support JMD as a checkout currency.
-  const oneOnOneUsd = Number(process.env.PRICE_ONE_ON_ONE_USD || '25.00');
-  const groupUsd = Number(process.env.PRICE_GROUP_USD || '13.00');
+    const oneOnOneUsd = Number(process.env.PRICE_ONE_ON_ONE_USD);
+   const groupUsd = Number(process.env.PRICE_GROUP_USD);
 
   const slots = [
     [1, 'Monday', '16:00', '18:00', 'online', 'one_on_one', 'Monday 4-6pm (Online)', 1, 4000, oneOnOneUsd],
